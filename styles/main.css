@@ -1,11 +1,19 @@
 main {
-  width: 80%;
+  /* 517652 */
+  margin-inline: 5rem;
   display: flex;
   flex-direction: column;
-  justify-self: center;
+
+  /* place-content: center; */
+  /* place-items: ; */
+  justify-content: center;
+  align-content: center;
+  /* align-items: c; */
+  align-self: center;
+  /* align-content: center; */
   margin-top: 3rem;
-  height: 100vh;
   row-gap: 1.5rem;
+  background-color: red;
 }
 .main-heading {
   font-size: 3.2rem;

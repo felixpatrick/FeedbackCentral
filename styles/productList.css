@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   place-content: center;
+  place-content: center;
 }
 .featured-product-list-container {
   place-content: center;

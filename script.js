@@ -1,9 +1,6 @@
 import { products } from "./data/data.js";
 
-// console.log("hello");
-
-console.log(products);
-
+// Loop through the products from the data and render on screen
 let productList = "";
 
 products.forEach((products) => {
