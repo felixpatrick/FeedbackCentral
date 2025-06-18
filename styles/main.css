@@ -3,17 +3,11 @@ main {
   margin-inline: 3rem;
   display: flex;
   flex-direction: column;
-
-  /* place-content: center; */
-  /* place-items: ; */
   justify-content: center;
   align-content: center;
-  /* align-items: c; */
   align-self: center;
-  /* align-content: center; */
   margin-top: 3rem;
   row-gap: 1.5rem;
-  background-color: red;
 }
 .main-heading {
   font-size: 3.2rem;
