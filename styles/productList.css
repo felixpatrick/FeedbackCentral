@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr;
   place-content: center;
-  background-color: red;
 }
 .featured-product-list-container {
   place-content: center;
