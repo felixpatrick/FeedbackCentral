@@ -1,0 +1,55 @@
+import { products } from "../data/data.js";
+
+// Loop through the products from the data and render on screen
+const container = document.querySelector(".featured-product-list-container");
+
+products.forEach((product) => {
+  // Wrapper div
+  const productDiv = document.createElement("div");
+  productDiv.classList.add("featured-product-list");
+
+  // Image link
+  const imageLink = document.createElement("a");
+  imageLink.href = `/product.html?slug=${product.slug}`;
+
+  // Image container
+  const imageContainer = document.createElement("div");
+  imageContainer.classList.add("product-image-container");
+
+  const img = document.createElement("img");
+  img.classList.add("product-image");
+  img.src = `./${product.image}`;
+  img.alt = product.name;
+
+  imageContainer.appendChild(img);
+  imageLink.appendChild(imageContainer);
+
+  // Product name link
+  const nameLink = document.createElement("a");
+  nameLink.href = `/product.html?slug=${product.slug}`;
+
+  const name = document.createElement("h2");
+  name.classList.add("product-name");
+  name.textContent = product.name;
+
+  nameLink.appendChild(name);
+
+  // Description
+  const desc = document.createElement("p");
+  desc.classList.add("product-description");
+  desc.textContent = product.description;
+
+  // Rating
+  const rating = document.createElement("div");
+  rating.classList.add("ratingcount");
+  rating.textContent = `Ratings (${product.rating.stars})`;
+
+  // Append all to wrapper
+  productDiv.appendChild(imageLink);
+  productDiv.appendChild(nameLink);
+  productDiv.appendChild(desc);
+  productDiv.appendChild(rating);
+
+  // Append to container
+  container.appendChild(productDiv);
+});

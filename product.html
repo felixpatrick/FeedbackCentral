@@ -10,26 +10,27 @@
     <link rel="stylesheet" href="./styles/nav.css" />
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/productList.css">
-    <title>Feedback Central</title>
+    <link rel="stylesheet" href="./styles/productItem.css">
+    <title>Product - Feedback Central</title>
     <script src="https://kit.fontawesome.com/31b96d7a78.js" defer crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header class="header">
         <nav class="navbar">
-            <a href="index.html">
-                <div class="navbar__logo">
-                    <img src="./images/logo/logo.png" alt="Feedback Central logo" class="navbar__logo-img" />
-                    <h2 class="navbar__logo-text">Feedback Central</h2>
-                </div>
-            </a>
+            <div class="logo-menu-container">
+                <a href="index.html">
+                    <div class="navbar__logo">
+                        <img src="./images/logo/logo.png" alt="Feedback Central logo" class="navbar__logo-img" />
+                        <h2 class="navbar__logo-text">Feedback Central</h2>
+                    </div>
+                </a>
 
-            <ul class="navbar__menu">
-                <li class="navbar__menu-item"><a href="index.html" class="navbar__menu-link">Home</a></li>
-                <li class="navbar__menu-item"><a href="#" class="navbar__menu-link">Products</a></li>
-                <li class="navbar__menu-item"><a href="#" class="navbar__menu-link">Categories</a></li>
-                <li class="navbar__menu-item"><a href="#" class="navbar__menu-link">About</a></li>
-            </ul>
+                <ul class="navbar__menu">
+                    <li class="navbar__menu-item"><a href="index.html" class="navbar__menu-link">Home</a></li>
+                    <li class="navbar__menu-item"><a href="#" class="navbar__menu-link">Categories</a></li>
+                    <li class="navbar__menu-item"><a href="#" class="navbar__menu-link">About</a></li>
+                </ul>
             </div>
 
             <!-- Hamburger (for mobile toggle) -->
@@ -56,26 +57,15 @@
         </nav>
     </header>
 
-    <main>
-        <h1 class="main-heading">Explore Products</h1>
-        <p class="main-description">Browse through our curated list of products and share your valuable feedback.</p>
-
-        <form class="navbar__search-form main-form" action="">
-            <input type="search" placeholder="Search" aria-label="Search" class="navbar__search-input main-search" />
-        </form>
-
-        <section class="featured-products">
-            <h3 class="secondary-headings">Featured Products</h3>
-
-            <div class="grid featured-product-list-container">
-
-            </div>
-
-
+    <main class="productItem-main">
+        <section class="product-details-main">
         </section>
+
+        <div class="temp-spacer"></div>
     </main>
 
-    <script type="module" src="./script/script.js"></script>
+
+
     <script type="module" src="./script/productitem.js"></script>
 </body>
 

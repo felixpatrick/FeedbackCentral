@@ -1,0 +1,55 @@
+.breadcrums {
+  color: #96c4a8;
+}
+.productItem-main {
+}
+.product-item-name {
+  font-size: 3.2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+.product-item-main-description {
+  margin-block: 1.5rem;
+}
+.product-item-image-container {
+  width: 35rem;
+}
+.product-item-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product-overview-heading {
+  margin-top: 2rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.product-overview-description {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.temp-spacer {
+  margin-bottom: 7rem;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .product-item-image-container {
+    width: 65rem;
+  }
+  .product-item-image {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-item-image-container {
+    width: 65rem;
+  }
+  .product-item-image {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
