@@ -9,8 +9,8 @@ const slug = getQueryParam("slug");
 const product = products.find((product) => product.slug === slug);
 
 const detail = document.querySelector(".product-details-main");
+
 if (product) {
-  // Clear existing content
   detail.innerHTML = "";
 
   // Breadcrumb
@@ -19,7 +19,7 @@ if (product) {
 
   const breadcrumbs = document.createElement("p");
   breadcrumbs.className = "breadcrums";
-  breadcrumbs.innerHTML = `<a href="/">Products</a> / ${product.name}`;
+  breadcrumbs.innerHTML = `<a href="/FeedbackCentral/index.html">Products</a> / ${product.name}`;
   breadcrumbContainer.appendChild(breadcrumbs);
 
   // Main heading
@@ -27,18 +27,18 @@ if (product) {
   mainHeading.className = "main-heading product-item-name";
   mainHeading.textContent = product.name;
 
-  // Dynamic short description
+  // Short description (optional fallback)
   const shortDescription = document.createElement("p");
   shortDescription.className = "main-description product-item-main-description";
   shortDescription.textContent =
-    product.shortDescription || "Explore product details and leave feedback."; // fallback
+    product.shortDescription || "Explore product details and leave feedback.";
 
-  // Product image
+  // Image (use slug as filename)
   const imageContainer = document.createElement("div");
   imageContainer.className = "product-item-image-container";
 
   const productImage = document.createElement("img");
-  productImage.src = `/FeedbackCentral/${product.image}`;
+  productImage.src = `/FeedbackCentral/images/productImages/${product.slug}.png`;
   productImage.alt = product.name;
   productImage.className = "product-item-image";
 
@@ -59,7 +59,7 @@ if (product) {
   overviewContainer.appendChild(overviewHeading);
   overviewContainer.appendChild(overviewDescription);
 
-  // Append all to the detail container
+  // Append all elements
   detail.appendChild(breadcrumbContainer);
   detail.appendChild(mainHeading);
   detail.appendChild(shortDescription);
