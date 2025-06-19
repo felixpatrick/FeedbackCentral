@@ -1,5 +1,8 @@
 import { products } from "../data/data.js";
 
+// Define base path for GitHub Pages
+const BASE_PATH = "/FeedbackCentral";
+
 function getQueryParam(param) {
   const params = new URLSearchParams(window.location.search);
   return params.get(param);
@@ -19,7 +22,7 @@ if (product) {
 
   const breadcrumbs = document.createElement("p");
   breadcrumbs.className = "breadcrums";
-  breadcrumbs.innerHTML = `<a href="/FeedbackCentral/index.html">Products</a> / ${product.name}`;
+  breadcrumbs.innerHTML = `<a href="${BASE_PATH}/index.html">Products</a> / ${product.name}`;
   breadcrumbContainer.appendChild(breadcrumbs);
 
   // Main heading
@@ -27,18 +30,18 @@ if (product) {
   mainHeading.className = "main-heading product-item-name";
   mainHeading.textContent = product.name;
 
-  // Short description (optional fallback)
+  // Short description
   const shortDescription = document.createElement("p");
   shortDescription.className = "main-description product-item-main-description";
   shortDescription.textContent =
     product.shortDescription || "Explore product details and leave feedback.";
 
-  // Image (use slug as filename)
+  // Image
   const imageContainer = document.createElement("div");
   imageContainer.className = "product-item-image-container";
 
   const productImage = document.createElement("img");
-  productImage.src = `/FeedbackCentral/images/productImages/${product.slug}.png`;
+  productImage.src = `${BASE_PATH}/images/productImages/${product.slug}.png`;
   productImage.alt = product.name;
   productImage.className = "product-item-image";
 
@@ -59,7 +62,7 @@ if (product) {
   overviewContainer.appendChild(overviewHeading);
   overviewContainer.appendChild(overviewDescription);
 
-  // Append all elements
+  // Append all
   detail.appendChild(breadcrumbContainer);
   detail.appendChild(mainHeading);
   detail.appendChild(shortDescription);
