@@ -38,7 +38,7 @@ if (product) {
   imageContainer.className = "product-item-image-container";
 
   const productImage = document.createElement("img");
-  productImage.src = `./${product.image}`;
+  productImage.src = `/FeedbackCentral/${product.image}`;
   productImage.alt = product.name;
   productImage.className = "product-item-image";
 
