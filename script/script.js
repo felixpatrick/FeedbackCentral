@@ -53,3 +53,5 @@ products.forEach((product) => {
   // Append to container
   container.appendChild(productDiv);
 });
+
+console.log("hello");
