@@ -9,27 +9,62 @@ const slug = getQueryParam("slug");
 const product = products.find((product) => product.slug === slug);
 
 const detail = document.querySelector(".product-details-main");
-
 if (product) {
-  detail.innerHTML = `
-    <div class="breadcrumb-container">
-      <p class="breadcrums"><a href="/">Products</a> / ${product.name}</p>
-    </div>
+  // Clear existing content
+  detail.innerHTML = "";
 
-    <h1 class="main-heading product-item-name">${product.name}</h1>
-    <p class="main-description product-item-main-description">
-      Browse through our curated list of products and share your valuable feedback.
-    </p>
+  // Breadcrumb
+  const breadcrumbContainer = document.createElement("div");
+  breadcrumbContainer.className = "breadcrumb-container";
 
-    <div class="product-item-image-container">
-      <img src="./${product.image}" class="product-item-image" alt="${product.name}">
-    </div>
+  const breadcrumbs = document.createElement("p");
+  breadcrumbs.className = "breadcrums";
+  breadcrumbs.innerHTML = `<a href="/">Products</a> / ${product.name}`;
+  breadcrumbContainer.appendChild(breadcrumbs);
 
-    <div class="product-overview-container">
-      <h2 class="secondary-headings product-overview-heading">Product Overview</h2>
-      <p class="product-overview-description">${product.description}</p>
-    </div>
-  `;
+  // Main heading
+  const mainHeading = document.createElement("h1");
+  mainHeading.className = "main-heading product-item-name";
+  mainHeading.textContent = product.name;
+
+  // Dynamic short description
+  const shortDescription = document.createElement("p");
+  shortDescription.className = "main-description product-item-main-description";
+  shortDescription.textContent =
+    product.shortDescription || "Explore product details and leave feedback."; // fallback
+
+  // Product image
+  const imageContainer = document.createElement("div");
+  imageContainer.className = "product-item-image-container";
+
+  const productImage = document.createElement("img");
+  productImage.src = `./${product.image}`;
+  productImage.alt = product.name;
+  productImage.className = "product-item-image";
+
+  imageContainer.appendChild(productImage);
+
+  // Overview section
+  const overviewContainer = document.createElement("div");
+  overviewContainer.className = "product-overview-container";
+
+  const overviewHeading = document.createElement("h2");
+  overviewHeading.className = "secondary-headings product-overview-heading";
+  overviewHeading.textContent = "Product Overview";
+
+  const overviewDescription = document.createElement("p");
+  overviewDescription.className = "product-overview-description";
+  overviewDescription.textContent = product.description;
+
+  overviewContainer.appendChild(overviewHeading);
+  overviewContainer.appendChild(overviewDescription);
+
+  // Append all to the detail container
+  detail.appendChild(breadcrumbContainer);
+  detail.appendChild(mainHeading);
+  detail.appendChild(shortDescription);
+  detail.appendChild(imageContainer);
+  detail.appendChild(overviewContainer);
 } else {
   detail.innerHTML = "<p>Product not found.</p>";
 }
