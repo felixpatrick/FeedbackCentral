@@ -52,6 +52,13 @@ export const products = [
     description:
       "Track your workouts, monitor your heart rate, and stay connected with the TimeTrack Smartwatch. Designed for professionals and athletes alike, it features a crisp OLED display, long-lasting battery, and seamless smartphone integration.",
     rating: { stars: 4.5, count: 87 },
+
+    features: {
+      processor: "Octa-Core 3.2GHz",
+      display: "6.7-inch AMOLED, 120Hz",
+      battery: "Up to 18 hours",
+      storage: "256GB / 512GB",
+    },
   },
   {
     id: "e43638ce-6aa0-b27",
