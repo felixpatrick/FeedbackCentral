@@ -3,6 +3,7 @@ import { products } from "../data/data.js";
 // Base path for GitHub Pages
 const BASE_PATH = "/FeedbackCentral";
 
+// Loop through the products from the data and render on screen
 const container = document.querySelector(".featured-product-list-container");
 
 products.forEach((product) => {
@@ -12,7 +13,7 @@ products.forEach((product) => {
 
   // Image link
   const imageLink = document.createElement("a");
-  imageLink.href = `/product.html?slug=${product.slug}`;
+  imageLink.href = `${BASE_PATH}/product.html?slug=${product.slug}`;
 
   // Image container
   const imageContainer = document.createElement("div");
@@ -20,7 +21,7 @@ products.forEach((product) => {
 
   const img = document.createElement("img");
   img.classList.add("product-image");
-  img.src = `/${product.image}`;
+  img.src = `${BASE_PATH}/${product.image}`;
   img.alt = product.name;
 
   imageContainer.appendChild(img);
